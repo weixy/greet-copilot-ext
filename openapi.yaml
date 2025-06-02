@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: My Go Copilot Extension
+  version: 1.0.0
+servers:
+  - url: https://your-ngrok-url.ngrok.io
+paths:
+  /chat:
+    post:
+      summary: Chat with the extension
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CopilotRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CopilotResponse'
+components:
+  schemas:
+    CopilotRequest:
+      type: object
+      properties:
+        prompt:
+          type: string
+    CopilotResponse:
+      type: object
+      properties:
+        content:
+          type: string
