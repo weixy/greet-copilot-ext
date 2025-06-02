@@ -1,3 +1,14 @@
-name: my-go-copilot-extension
+name: greet-copilot-ext
 description: A simple Copilot extension built with Go
-openapi_url: https://your-ngrok-url.ngrok.io/openapi.yaml
+api:
+  url: https://psychic-trout-rw7r5rr47qc5jgg-8080.app.github.dev/greet
+  auth: none
+commands:
+  - name: greeting
+    parameters:
+    - name: prompt
+      type: string
+    examples:
+      - input: "pls list caches for table: ABCD"
+        arguments:
+          prompt: "ABCD"
