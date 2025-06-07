@@ -1,14 +1,17 @@
-name: greet-copilot-ext
+name: greet-copilot-ext.copilot-extension
 description: A simple Copilot extension built with Go
-api:
-  url: https://psychic-trout-rw7r5rr47qc5jgg-8080.app.github.dev/greet
-  auth: none
-commands:
-  - name: greeting
-    parameters:
-    - name: prompt
-      type: string
-    examples:
-      - input: "pls list caches for table: ABCD"
-        arguments:
-          prompt: "ABCD"
+publisher: j1mw3i
+targets:
+  - github/copilot
+requested_permissions:
+  contents: read
+contributes:
+  commands:
+    - command: greet-copilot-ext.greet
+      title: Greeting
+      description: Greetings
+      handler: greet
+      mode: chat
+      parameters:
+        - name: prompt
+          required: true

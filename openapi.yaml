@@ -3,7 +3,7 @@ info:
   title: My Go Copilot Extension
   version: 1.0.0
 servers:
-  - url: https://psychic-trout-rw7r5rr47qc5jgg-8080.app.github.dev
+  - url: hhttps://psychic-trout-rw7r5rr47qc5jgg-8080.app.github.dev/
 paths:
   /greet:
     post:
